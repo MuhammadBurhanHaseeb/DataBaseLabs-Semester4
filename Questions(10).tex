@@ -1,0 +1,247 @@
+/** Problem(1)
+
+Find the products(names only) whose cost is more than the average cost.
+**/
+
+/** Solution (1) **/
+
+Select Name From Assignment01.dbo.Product Where Cost \textgreater{}
+(Select AVG(Cost) From Assignment01.dbo.Product)
+
+/** Solution (2) **/ SELECT name FROM Assignment01.dbo.Product GROUP BY
+name HAVING AVG(cost) \textgreater{} (SELECT AVG(cost) FROM
+Assignment01.dbo.Product)
+
+/** Solution (3) **/
+
+SELECT Name AS `Name' FROM Assignment01.dbo.Product INNER JOIN ( SELECT
+AVG(Cost) AS `Average Cost' FROM Assignment01.dbo.Product ) joined ON
+Cost \textgreater{} {[}Average Cost{]}
+
+\begin{verbatim}
+/**   Solution (4)       **/
+\end{verbatim}
+
+SELECT Name FROM Assignment01.dbo.Product GROUP BY Name HAVING AVG(cost)
+\textgreater{} (SELECT AVG(cost) FROM Assignment01.dbo.Product)
+
+/****** Problem (1)\\
+List the name of companies whose products are bought by Aslam. ******/
+
+/****** Solution(1) ******/ SELECT DISTINCT pr.maker FROM
+Assignment01.dbo.Purchaser p JOIN Assignment01.dbo.Product pr ON
+p.product = pr.name WHERE p.buyer = `Aslam'
+
+/****** Solution(2) ******/ SELECT DISTINCT pr.maker FROM
+Assignment01.dbo.Purchaser p JOIN Assignment01.dbo.Product pr ON
+p.product = pr.name WHERE p.buyer = `Aslam' GROUP BY pr.maker
+
+/****** Solution(3) ******/ SELECT DISTINCT pr.maker FROM
+Assignment01.dbo.Purchaser p JOIN Assignment01.dbo.Product pr ON
+p.product = pr.name WHERE p.buyer = `Aslam' ORDER BY pr.maker DESC
+
+/****** Solution(4) ******/ SELECT DISTINCT maker FROM
+Assignment01.dbo.Purchaser p JOIN Assignment01.dbo.Product pr ON
+p.product = pr.name WHERE buyer = `Aslam'
+
+/** Problem(3)\\
+List the name of products that are more expensive that all the products
+produced by Unilever. **/
+
+/*** Solition(1) ****/ SELECT name FROM Assignment01.dbo.Product WHERE
+cost \textgreater{} ALL ( SELECT cost FROM Assignment01.dbo.Product
+WHERE maker = `Unilever' )
+
+/*** Solition(2) ****/
+
+SELECT name FROM Assignment01.dbo.Product WHERE cost \textgreater{} (
+SELECT MAX(cost) FROM Assignment01.dbo.Product WHERE maker = `Unilever'
+)
+
+/*** Solition(3) ****/ SELECT name FROM Assignment01.dbo.Product WHERE
+cost \textgreater{} ( SELECT AVG(cost) FROM Assignment01.dbo.Product
+WHERE maker = `Unilever' )
+
+/*** Solition(4) ****/ SELECT name FROM Assignment01.dbo.Product WHERE
+cost \textgreater{} any( SELECT cost FROM Assignment01.dbo.Product WHERE
+maker = `Unilever' GROUP BY cost HAVING COUNT(*) = 1 )
+
+/*** Solition(5) ****/ Select Name ,Cost from Assignment01.dbo.Product
+where Cost \textgreater{} (Select SUM(Cost) From
+Assignment01.dbo.Product Where Maker = `Unilever' )
+
+/*** Problem(4) ****/
+
+/**** List the copy cat products along with manufacturer, i.e.~the
+products that have the same name as produced by Unilever. ***/
+
+/**** Solution(1) ***/ SELECT DISTINCT p1.name, p1.maker FROM
+Assignment01.dbo.Product p1 INNER JOIN Assignment01.dbo.Product p2 ON
+p1.name = p2.name AND p2.maker = `Unilever' AND p1.maker != `Unilever'
+
+/**** Solution(2) \textbf{\emph{/ SELECT p1.name, p1.maker, c.name as
+company FROM Assignment01.dbo.Product p1 INNER JOIN
+Assignment01.dbo.Product p2 ON p1.name = p2.name AND p2.maker =
+`Unilever' AND p1.maker != `Unilever' INNER JOIN
+Assignment01.dbo.Company c ON p1.maker = c.name /}}* Solution(3)
+\textbf{\emph{/ SELECT p1.name, p1.maker, p1.cost, p1.year FROM
+Assignment01.dbo.Product p1 INNER JOIN Assignment01.dbo.Product p2 ON
+p1.name = p2.name AND p2.maker = `Unilever' AND p1.maker != `Unilever'
+/}}* Solution(4) ***/ SELECT p1.name, p1.maker, p1.cost, p1.year, c.city
+FROM Assignment01.dbo.Product p1 INNER JOIN Assignment01.dbo.Product p2
+ON p1.name = p2.name AND p2.maker = `Unilever' AND p1.maker !=
+`Unilever' INNER JOIN Assignment01.dbo.Company c ON p1.maker = c.name
+
+/*** Problem(5) ****/ /*** Buyers of products produced in Lahore. ****/
+
+/*** Solution(1) ***/
+
+SELECT DISTINCT p.buyer FROM Assignment01.dbo.Purchaser p JOIN
+Assignment01.dbo.Product pr ON p.product = pr.name JOIN
+Assignment01.dbo.Company c ON pr.maker = c.name AND c.city = `Lahore'
+
+/*** Solution(2) ***/ SELECT p.buyer, SUM(p.price) AS total\_spent FROM
+Assignment01.dbo.Purchaser p JOIN Assignment01.dbo.Product pr ON
+p.product = pr.name JOIN Assignment01.dbo.Company c ON pr.maker = c.name
+AND c.city = `Lahore' GROUP BY p.buyer
+
+/*** Solution(3) ***/ SELECT pr.name FROM Assignment01.dbo.Product pr
+JOIN Assignment01.dbo.Company c ON pr.maker = c.name AND c.city =
+`Lahore'
+
+/*** Solution(4) ***/
+
+SELECT pr.name FROM Assignment01.dbo.Product pr JOIN
+Assignment01.dbo.Company c ON pr.maker = c.name AND c.city = `Lahore'
+JOIN Assignment01.dbo.Purchaser p ON pr.name = p.product
+
+/**** Problem(6) ****/\\
+/**** List of buyers, who only buy the products 'Made in Karachi' ****/
+
+/**** Solution(1) *****/ Select distinct buyer from
+Assignment01.dbo.Purchaser p join Assignment01.dbo.Product AS pr on
+p.product = pr.name where pr.maker = `Karachi'
+
+/**** Solution(2) *****/ SELECT DISTINCT p.buyer FROM
+Assignment01.dbo.Purchaser p WHERE p.product IN ( SELECT name FROM
+Assignment01.dbo.Product WHERE Product.maker = `Karachi' ) AND p.buyer
+NOT IN ( SELECT DISTINCT buyer FROM Assignment01.dbo.Purchaser JOIN
+Assignment01.dbo.Product ON Product = Product.name WHERE Product.maker
+!= `Karachi' )
+
+/**** Solution(3) *****/ SELECT DISTINCT p.buyer FROM
+Assignment01.dbo.Purchaser p JOIN Assignment01.dbo.Product ON p.product
+= Product.name JOIN Assignment01.dbo.Company ON Product.maker =
+Company.name AND Company.city = `Karachi' WHERE NOT EXISTS ( SELECT *
+FROM Assignment01.dbo.Purchaser JOIN Assignment01.dbo.Product ON
+Product= Product.name JOIN Assignment01.dbo.Company ON Product.maker =
+Company.name WHERE Company.city != `Karachi' AND Buyer= p.buyer )
+
+/**** Solution(4) *****/ SELECT p.buyer FROM Assignment01.dbo.Purchaser
+p JOIN Assignment01.dbo.Product ON p.product = Product.name JOIN
+Assignment01.dbo.Company ON Product.maker = Company.name AND
+Company.city = `Karachi' GROUP BY p.buyer HAVING COUNT(DISTINCT CASE
+WHEN Company.city != `Karachi' THEN Product.name END) = 0
+
+/**** Problem(7) ****/\\
+/**** Name and price of products bought by more than five customers.
+****/
+
+/**** Solution(1) *****/ SELECT p.name, price FROM
+Assignment01.dbo.Product p INNER JOIN Assignment01.dbo.Purchaser d ON
+d.Product = d.Product GROUP BY p.name, d.price HAVING COUNT(DISTINCT
+d.buyer) \textgreater{} 5
+
+/**** Solution(2) *****/ SELECT p.name, AVG(pr.price) AS average\_price
+FROM Assignment01.dbo.Product p INNER JOIN Assignment01.dbo.Purchaser pr
+ON p.name = pr.product INNER JOIN Assignment01.dbo.Purchaser pr2 ON
+p.name = pr2.product GROUP BY p.name HAVING COUNT(DISTINCT pr2.buyer)
+\textgreater{} 5
+
+/**** Solution(3) *****/ SELECT p.name, AVG(pr.price) AS avg\_price FROM
+Assignment01.dbo.Product p JOIN Assignment01.dbo.Purchaser pr ON p.name
+= pr.product GROUP BY p.name HAVING COUNT(DISTINCT pr.buyer)
+\textgreater{} 5
+
+/**** Solution(4) *****/ SELECT p.name, COUNT(DISTINCT pr.buyer) as
+customer\_count FROM Assignment01.dbo.Product p INNER JOIN
+Assignment01.dbo.Purchaser pr ON pr.product = p.name GROUP BY p.name
+HAVING COUNT(DISTINCT pr.buyer) \textgreater{} 5
+
+/**** Problem(8) ****/\\
+/**** List of products that are more expensive that all the products
+made by same company before 2015. ****/
+
+/**** Solution(1) *****/ SELECT p.name, p.maker, p.cost, p.year FROM
+Assignment01.dbo.Product p WHERE p.cost \textgreater{} ALL ( SELECT
+p2.cost FROM Assignment01.dbo.Product p2 WHERE p2.maker = p.maker AND
+p2.year \textless{} 2015 ) /**** Solution(2) *****/ SELECT p.name,
+p.maker, p.cost, p.year, c.name AS company\_name, c.city, pu.buyer,
+pu.price FROM Assignment01.dbo.Product p JOIN Assignment01.dbo.Company c
+ON p.maker = c.name LEFT JOIN Assignment01.dbo.Purchaser pu ON p.name =
+pu.product WHERE p.cost \textgreater{} ALL ( SELECT p2.cost FROM
+Assignment01.dbo.Product p2 WHERE p.maker = p2.maker AND p2.year
+\textless{} 2015 ) ORDER BY p.cost DESC
+
+/**** Solution(3) *****/ SELECT p1.name AS product\_name, p1.cost AS
+product\_cost, p1.year AS product\_year, c.name AS company\_name FROM
+Assignment01.dbo.Product p1 INNER JOIN Assignment01.dbo.Company c ON
+p1.maker = c.name WHERE p1.year \textgreater{} 2015 AND p1.cost
+\textgreater{} ALL ( SELECT p2.cost FROM Assignment01.dbo.Product p2
+WHERE p2.maker = p1.maker AND p2.year \textless{} 2015 ) ORDER BY
+p1.cost DESC
+
+/**** Solution(4) *****/ SELECT p1.name, p1.maker, p1.cost FROM
+Assignment01.dbo.Product p1 WHERE p1.cost \textgreater{} ( SELECT
+MAX(p2.cost) FROM Assignment01.dbo.Product p2 WHERE p2.maker = p1.maker
+AND p2.year \textless{} 2015 )
+
+/**** Solution(5) *****/ SELECT p1.name, p1.maker, p1.cost FROM
+Assignment01.dbo.Product p1 WHERE p1.year \textgreater{} 2015 AND
+p1.cost \textgreater{} ALL ( SELECT p2.cost FROM
+Assignment01.dbo.Product p2 WHERE p2.maker = p1.maker AND p2.year
+\textless{} 2015 )
+
+/**** Problem(9) ****/\\
+/**** List of companies who never sale products with loss. ****/ /****
+Solution(1) ****/ SELECT DISTINCT c.name, c.city FROM
+Assignment01.dbo.Company c INNER JOIN Assignment01.dbo.Product p ON
+c.name = p.maker LEFT JOIN Assignment01.dbo.Purchaser pu ON p.name =
+pu.product WHERE pu.price \textgreater= p.cost OR pu.price IS NULL
+
+/**** Solution(2) ****/ SELECT c.name, c.city FROM
+Assignment01.dbo.Company c WHERE NOT EXISTS (SELECT 1 FROM
+Assignment01.dbo.Product p INNER JOIN Assignment01.dbo.Purchaser pu ON
+p.name = pu.product WHERE c.name = p.maker AND pu.price \textless{}
+p.cost)
+
+/**** Solution(3) ****/ SELECT c.name, c.city FROM
+Assignment01.dbo.Company c LEFT JOIN Assignment01.dbo.{[}Product{]} p ON
+c.name = p.maker LEFT JOIN Assignment01.dbo.Purchaser pu ON p.name =
+pu.product GROUP BY c.name, c.city HAVING MIN(p.cost) \textless=
+MAX(pu.price) OR MAX(pu.price) IS NULL
+
+/**** Solution(4) ****/ SELECT c.name, c.city FROM
+Assignment01.dbo.Company c INNER JOIN Assignment01.dbo.Product p ON
+c.name = p.maker LEFT JOIN Assignment01.dbo.Purchaser pu ON p.name =
+pu.product GROUP BY c.name, c.city HAVING COUNT(CASE WHEN pu.price
+\textless{} p.cost THEN 1 END) = 0
+
+/**** Problem(10) ****/\\
+/**** List the products which have more than average revenue in 2015 but
+below average revenue in 2016 ****/ /**** Solution(1) ****/ SELECT
+p.name FROM Assignment01.dbo.Product p INNER JOIN
+Assignment01.dbo.Purchaser pur ON p.name = pur.product WHERE pur.price
+\textgreater{} (SELECT AVG(pur.price) FROM Assignment01.dbo.Purchaser
+pur WHERE YEAR(p.Year) = 2015) AND pur.price \textless{} (SELECT
+AVG(pur.price) FROM Assignment01.dbo.Purchaser pur WHERE YEAR(p.Year) =
+2016) AND YEAR(p.Year) = 2015
+
+/**** Solution(2) ****/
+
+SELECT p.name FROM Assignment01.dbo.Product p INNER JOIN
+Assignment01.dbo.Purchaser pur ON p.name = pur.product WHERE pur.price
+\textgreater{} (SELECT AVG(pur.price) FROM Assignment01.dbo.Purchaser
+pur WHERE YEAR(p.Year) = 2015) AND pur.price \textless{} (SELECT
+AVG(pur.price) FROM Assignment01.dbo.Purchaser pur WHERE YEAR(p.Year) =
+2016) AND YEAR(p.Year) = 2015 GROUP BY p.name
