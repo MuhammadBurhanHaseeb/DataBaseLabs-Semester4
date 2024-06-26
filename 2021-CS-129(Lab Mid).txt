@@ -1,0 +1,76 @@
+***
+Q1
+Select Email as 'EmailId of Student' , Student as 'Student Name'
+From AspNetUsers as anu Join(Select UserId, FullName as Student From SpikoStudent as ss Where ss.StudentId=Any(Select Distinct sss.StudentId From SpikoStudentSection as sss Except
+Select Distinct StudentId From SpikoAssignmentSubmission)) as temp
+On UserId = anu.Id 
+
+***
+Q2
+SELECT DISTINCT CONCAT('Fall ', YEAR(E.EnrollmentDateTime)) AS SemesterName
+FROM Enrollments E;
+
+
+***
+Q3 
+SELECT Distinct(CourseTitle)  
+FROM SpikoCourse as sc
+WHERE sc.CourseId  NOT IN ( SELECT ss.id FROM SpikoSection as ss)
+
+***
+Q4
+SELECT SUM(sse.ObtainedMarks) as TotalMarks, ss.FullName
+FROM SpikoStudentEvaluation as sse
+INNER JOIN SpikoEvaluation as se ON se.Id = sse.EvaluationId
+INNER JOIN SpikoStudent as ss ON ss.StudentId = sse.StudentId
+GROUP BY sse.StudentId, ss.FullName;
+
+
+***
+Q5
+SELECT ss.FullName
+FROM SpikoStudent as ss
+WHERE ss.StudentId IN (SELECT sas.StudentId 
+FROM SpikoAssignmentSubmission as sas
+WHERE sas.AssignmentId IN (SELECT sa.id 
+FROM SpikoAssignment as sa 
+WHERE sas.SubmittedOn < DATEADD(hour, -1, sa.Deadline))
+Group By StudentId
+Having Count(StudentId) >=2);
+
+***
+Q6 
+SELECT Distinct(CourseTitle)
+FROM SpikoCourse as sc
+Where sc.CourseId IN (SELECT ss.CourseId FROM SpikoSection as ss Where ss.id in (Select sss.Sectionid From SpikoStudentSection as sss GROUP BY sss.SectionId Having Count(StudentId) >=50))
+
+***
+Q7
+SELECT AssignmentId 
+FROM SpikoAssignmentSubmission as sas
+WHERE sas.AssignmentId IN  (SELECT sa.Id FROM SpikoAssignment as sa Where sas.SubmittedOn < sa.DeadLine) 
+GROUP BY sas.AssignmentId 
+HAVING COUNT(AssignmentId) <= 2;
+
+***
+Q8 
+SELECT Distinct(CourseTitle)
+FROM SpikoCourse as sc
+WHERE sc.CourseId IN (SELECT ss.CourseId FROM SpikoSection as ss Where ss.Id IN ( Select sa.SectionId From SpikoAssignment as sa Where DATEDIFF(hour, CreatedOn , DeadLine ) <= 48))
+
+***
+Q9
+SELECT DISTINCT e1.RegistrationNumber, e2.RegistrationNumber
+FROM Enrollments e1
+JOIN Enrollments e2 ON e1.StudentId = e2.StudentId AND e1.CourseId <> e2.CourseId
+GROUP BY e1.RegistrationNumber, e2.RegistrationNumber
+HAVING COUNT(DISTINCT e1.CourseId) > 3 AND COUNT(DISTINCT e2.CourseId) > 3
+
+
+***
+Q10
+SELECT DISTINCT s1.RegistrationNumber, s2.RegistrationNumber
+FROM Submission s1
+JOIN Submission s2 ON s1.AssignmentId = s2.AssignmentId AND s1.SubmissionDateTime = DATEADD(hour, -1, s2.SubmissionDateTime) AND s1.RegistrationNumber < s2.RegistrationNumber
+GROUP BY s1.RegistrationNumber, s2.RegistrationNumber, s1.AssignmentId
+HAVING COUNT(*) > 2
