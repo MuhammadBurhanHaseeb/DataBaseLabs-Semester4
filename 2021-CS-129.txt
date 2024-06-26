@@ -1,0 +1,6 @@
+***
+q1	
+SELECT algorithm ,(select sum(t.volume) from  coins as c JOIN transactions as t on c.code = t.coin_code  where month(dt) >00 and month(dt) <= 03  ) as transactions_Q1 ,(select sum(volume) from  coins as c JOIN transactions as t on c.code = t.coin_code where month(dt) >03 and month(dt) <=06 ) as transactions_Q2,(select sum(volume) from coins as c JOIN transactions as t on c.code = t.coin_code where month(dt) > 06 and month(dt) <=09 ) as transactions_Q3,(select sum(volume) from coins as c JOIN transactions as t on c.code = t.coin_code where month(dt) > 09 and month(dt) < 13) as transactions_Q4
+from  coins as c JOIN transactions as t on c.code = t.coin_code 
+GROUP by algorithm
+ORDER by algorithm  
