@@ -1,0 +1,46 @@
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).exe.config
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).exe
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).pdb
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.AssemblyReference.cache
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Form1.resources
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Mainform.resources
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Properties.Resources.resources
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.GenerateResource.cache
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.CoreCompileInputs.cache
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).exe
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).pdb
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Createstudent.resources
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.insertstudent.resources
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.DeleteStudent.resources
+C:\Users\M Ajmal\Documents\Data Base System\Projects\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.updatestudent.resources
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).exe.config
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).exe
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).pdb
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.AssemblyReference.cache
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Createstudent.resources
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.DeleteStudent.resources
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Form1.resources
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.insertstudent.resources
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Mainform.resources
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Properties.Resources.resources
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.updatestudent.resources
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.GenerateResource.cache
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.CoreCompileInputs.cache
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).exe
+C:\Users\M Ajmal\Documents\Data Base System\Backup\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).pdb
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).exe.config
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).exe
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\bin\Debug\ProjentA(2021-CS-139).pdb
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.AssemblyReference.cache
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.SuggestedBindingRedirects.cache
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Createstudent.resources
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.DeleteStudent.resources
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Form1.resources
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.insertstudent.resources
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Mainform.resources
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.Properties.Resources.resources
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA_2021_CS_139_.updatestudent.resources
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.GenerateResource.cache
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).csproj.CoreCompileInputs.cache
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).exe
+C:\Users\MUHAMMAD BURHAN\OneDrive\Desktop\Semester4\Data Base\week5\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\ProjentA(2021-CS-139)\obj\Debug\ProjentA(2021-CS-139).pdb
