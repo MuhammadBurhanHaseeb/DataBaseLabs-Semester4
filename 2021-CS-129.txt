@@ -1,6 +1,4 @@
-***
-q1	
-SELECT algorithm ,(select sum(t.volume) from  coins as c JOIN transactions as t on c.code = t.coin_code  where month(dt) >00 and month(dt) <= 03  ) as transactions_Q1 ,(select sum(volume) from  coins as c JOIN transactions as t on c.code = t.coin_code where month(dt) >03 and month(dt) <=06 ) as transactions_Q2,(select sum(volume) from coins as c JOIN transactions as t on c.code = t.coin_code where month(dt) > 06 and month(dt) <=09 ) as transactions_Q3,(select sum(volume) from coins as c JOIN transactions as t on c.code = t.coin_code where month(dt) > 09 and month(dt) < 13) as transactions_Q4
-from  coins as c JOIN transactions as t on c.code = t.coin_code 
-GROUP by algorithm
-ORDER by algorithm  
+Q1
+Select P1.CompanyName,MONTH(p2.OrderDate),(Select  sum(UnitPrice) from northwind.dbo.[Order Details] ) AS 'Spending' From northwind.dbo.Customers p1  join northwind.dbo.Orders p2 on p1.CustomerID = p1.CustomerID join northwind.dbo.[Order Details] p3 on p2.OrderID =  p3.OrderID
+/**Q3**/
+Select p2.ShipRegion,Sum(Quantity) from northwind.dbo.[Order Details] p1 JOIN northwind.dbo.Orders p2 on p1.OrderID = p2.OrderID join northwind.dbo.Employees p3 on p2.EmployeeID = p3.EmployeeID Where p2.ShipRegion = p3.Region Group by p2.ShipRegion
