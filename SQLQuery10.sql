@@ -1,0 +1,1 @@
+EXEC stpDeleteData 'mango'
